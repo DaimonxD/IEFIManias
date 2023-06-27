@@ -78,7 +78,7 @@ namespace IEFIManiás
 
         private void txtFecha_MouseClick(object sender, MouseEventArgs e)
         {
-            txtFecha.Text = ""; 
+            txtFecha.Text = "";
         }
 
         private void cmdCerrar2_MouseEnter(object sender, EventArgs e)
@@ -96,6 +96,37 @@ namespace IEFIManiás
             if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void txtFecha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cmdRegistrar_Click(object sender, EventArgs e)
+        {
+            BD bd = new BD();
+
+            bd.Nombre = txtNombre.Text;
+            bd.Fecha = txtFecha.Text;
+            bd.Id = Convert.ToInt32(txtID.Text);
+
+            MessageBox.Show("Guardado Correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+
+        //temporal
+        private void ImprimirDatos()
+        {
+            List<BD> ListDatos = new List<BD>();
+            Console.WriteLine("Datos");
+            foreach(BD persona in ListDatos)
+            {
+                Console.WriteLine($"Nombre)
             }
         }
     }

@@ -133,6 +133,7 @@
             this.txtFecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFecha.WordWrap = false;
             this.txtFecha.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtFecha_MouseClick);
+            this.txtFecha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFecha_KeyPress);
             // 
             // panel3
             // 
@@ -243,6 +244,7 @@
             this.cmdRegistrar.TabIndex = 5;
             this.cmdRegistrar.Text = "&Registrar";
             this.cmdRegistrar.UseVisualStyleBackColor = true;
+            this.cmdRegistrar.Click += new System.EventHandler(this.cmdRegistrar_Click);
             // 
             // frmCargaProducto
             // 
