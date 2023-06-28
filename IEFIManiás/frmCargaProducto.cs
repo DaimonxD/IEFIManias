@@ -101,7 +101,7 @@ namespace IEFIManiás
 
         private void txtFecha_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '/')
             {
                 e.Handled = true;
             }
@@ -110,24 +110,27 @@ namespace IEFIManiás
         private void cmdRegistrar_Click(object sender, EventArgs e)
         {
             BD bd = new BD();
+            string id = txtID.Text;
+            string fecha = txtFecha.Text;
+            
 
-            bd.Nombre = txtNombre.Text;
-            bd.Fecha = txtFecha.Text;
-            bd.Id = Convert.ToInt32(txtID.Text);
-
-            MessageBox.Show("Guardado Correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-
-        //temporal
-        private void ImprimirDatos()
-        {
-            List<BD> ListDatos = new List<BD>();
-            Console.WriteLine("Datos");
-            foreach(BD persona in ListDatos)
+            if(!string.IsNullOrEmpty(id) && int.TryParse(id, out int idNum))
             {
-                Console.WriteLine($"Nombre)
+
+
+
+                bd.Nombre = txtNombre.Text;
+                bd.Fecha = txtFecha.Text;
+                bd.Id = idNum;
+                Console.WriteLine(bd.Id);
+
+                MessageBox.Show("Guardado Correctamente...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+            {
+                MessageBox.Show("Ingrese un ID válido...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }
