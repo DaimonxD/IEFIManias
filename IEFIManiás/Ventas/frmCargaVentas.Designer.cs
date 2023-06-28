@@ -32,7 +32,10 @@
             this.lblTitulo2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtFA = new System.Windows.Forms.TextBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.txtFM = new System.Windows.Forms.TextBox();
             this.txtFD = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,15 +48,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.cmdRegistrar2 = new System.Windows.Forms.Button();
+            this.cmdConsultar2 = new System.Windows.Forms.Button();
+            this.cmdCancelar = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo2
@@ -103,6 +106,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Productos";
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Black;
+            this.panel5.Location = new System.Drawing.Point(67, 312);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(200, 1);
+            this.panel5.TabIndex = 7;
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCantidad.Location = new System.Drawing.Point(67, 294);
+            this.txtCantidad.MaxLength = 10;
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(200, 19);
+            this.txtCantidad.TabIndex = 5;
+            this.txtCantidad.Text = "Cantidad";
+            this.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCantidad.WordWrap = false;
+            // 
             // txtFA
             // 
             this.txtFA.BackColor = System.Drawing.Color.MediumAquamarine;
@@ -114,6 +138,16 @@
             this.txtFA.TabIndex = 12;
             this.txtFA.Text = "YYYY";
             this.txtFA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(27, 288);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(34, 25);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 6;
+            this.pictureBox4.TabStop = false;
             // 
             // txtFM
             // 
@@ -237,36 +271,40 @@
             this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtID.WordWrap = false;
             // 
-            // panel5
+            // cmdRegistrar2
             // 
-            this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(67, 312);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(200, 1);
-            this.panel5.TabIndex = 7;
+            this.cmdRegistrar2.FlatAppearance.BorderColor = System.Drawing.Color.LawnGreen;
+            this.cmdRegistrar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdRegistrar2.ForeColor = System.Drawing.Color.LawnGreen;
+            this.cmdRegistrar2.Location = new System.Drawing.Point(314, 396);
+            this.cmdRegistrar2.Name = "cmdRegistrar2";
+            this.cmdRegistrar2.Size = new System.Drawing.Size(75, 23);
+            this.cmdRegistrar2.TabIndex = 8;
+            this.cmdRegistrar2.Text = "&Registrar";
+            this.cmdRegistrar2.UseVisualStyleBackColor = true;
             // 
-            // txtCantidad
+            // cmdConsultar2
             // 
-            this.txtCantidad.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCantidad.Location = new System.Drawing.Point(67, 294);
-            this.txtCantidad.MaxLength = 10;
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(200, 19);
-            this.txtCantidad.TabIndex = 5;
-            this.txtCantidad.Text = "Cantidad";
-            this.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCantidad.WordWrap = false;
+            this.cmdConsultar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdConsultar2.Location = new System.Drawing.Point(162, 396);
+            this.cmdConsultar2.Name = "cmdConsultar2";
+            this.cmdConsultar2.Size = new System.Drawing.Size(75, 23);
+            this.cmdConsultar2.TabIndex = 7;
+            this.cmdConsultar2.Text = "&Consultar";
+            this.cmdConsultar2.UseVisualStyleBackColor = true;
             // 
-            // pictureBox4
+            // cmdCancelar
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(27, 288);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(34, 25);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 6;
-            this.pictureBox4.TabStop = false;
+            this.cmdCancelar.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.cmdCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.cmdCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdCancelar.ForeColor = System.Drawing.Color.Red;
+            this.cmdCancelar.Location = new System.Drawing.Point(15, 396);
+            this.cmdCancelar.Name = "cmdCancelar";
+            this.cmdCancelar.Size = new System.Drawing.Size(75, 23);
+            this.cmdCancelar.TabIndex = 6;
+            this.cmdCancelar.Text = "&Cancelar";
+            this.cmdCancelar.UseVisualStyleBackColor = false;
             // 
             // frmCargaVentas
             // 
@@ -274,6 +312,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(398, 429);
+            this.Controls.Add(this.cmdRegistrar2);
+            this.Controls.Add(this.cmdConsultar2);
+            this.Controls.Add(this.cmdCancelar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -283,10 +324,10 @@
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -312,5 +353,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Button cmdRegistrar2;
+        private System.Windows.Forms.Button cmdConsultar2;
+        private System.Windows.Forms.Button cmdCancelar;
     }
 }

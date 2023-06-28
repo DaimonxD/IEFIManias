@@ -34,6 +34,7 @@
             this.cmdAceptar = new System.Windows.Forms.Button();
             this.cmdRefrescar = new System.Windows.Forms.Button();
             this.Cid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ccantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cnombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cfecha1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cfecha2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,13 +69,16 @@
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(139)))), ((int)(((byte)(116)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Cid,
+            this.Ccantidad,
             this.Cnombre,
             this.Cfecha1,
             this.Cfecha2,
             this.Cfecha3});
+            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(139)))), ((int)(((byte)(116)))));
             this.dataGridView1.Location = new System.Drawing.Point(12, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(808, 330);
@@ -111,7 +115,14 @@
             this.Cid.HeaderText = "ID";
             this.Cid.Name = "Cid";
             this.Cid.ReadOnly = true;
-            this.Cid.Width = 250;
+            this.Cid.Width = 150;
+            // 
+            // Ccantidad
+            // 
+            this.Ccantidad.Frozen = true;
+            this.Ccantidad.HeaderText = "Cantidad";
+            this.Ccantidad.Name = "Ccantidad";
+            this.Ccantidad.ReadOnly = true;
             // 
             // Cnombre
             // 
@@ -173,6 +184,7 @@
         private System.Windows.Forms.Button cmdAceptar;
         private System.Windows.Forms.Button cmdRefrescar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ccantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cnombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cfecha1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cfecha2;
