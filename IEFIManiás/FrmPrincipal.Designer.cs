@@ -109,7 +109,7 @@
             this.cmdAceptar1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.cmdAceptar1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdAceptar1.ForeColor = System.Drawing.Color.Black;
-            this.cmdAceptar1.Location = new System.Drawing.Point(167, 166);
+            this.cmdAceptar1.Location = new System.Drawing.Point(155, 133);
             this.cmdAceptar1.Name = "cmdAceptar1";
             this.cmdAceptar1.Size = new System.Drawing.Size(75, 23);
             this.cmdAceptar1.TabIndex = 3;
@@ -122,7 +122,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(397, 212);
+            this.ClientSize = new System.Drawing.Size(397, 194);
             this.Controls.Add(this.cmdAceptar1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbox1);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IEFIManiás.Producto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,8 @@ namespace IEFIManiás
 {
     public partial class frmCargaProducto : Form
     {
+
+        frmProductoConsulta pc = new frmProductoConsulta();
         private bool mouse;
         private Point UltUbicacion;
 
@@ -21,12 +24,6 @@ namespace IEFIManiás
         {
             InitializeComponent();
         }
-
-        private void cmdCerrar2_Click(object sender, EventArgs e)
-        {
-           Process.GetCurrentProcess().Kill();
-        }
-
         private void frmCargaProducto_MouseDown(object sender, MouseEventArgs e)
         {
             mouse = true;
@@ -68,29 +65,13 @@ namespace IEFIManiás
         }
         private void txtID_MouseClick(object sender, MouseEventArgs e)
         {
-            txtID.Text = ""; 
+            txtID.Text = string.Empty;
         }
 
         private void txtNombre_MouseClick(object sender, MouseEventArgs e)
         {
-            txtNombre.Text = ""; 
+            txtNombre.Text = string.Empty;
         }
-
-        private void txtFecha_MouseClick(object sender, MouseEventArgs e)
-        {
-            txtFecha.Text = "";
-        }
-
-        private void cmdCerrar2_MouseEnter(object sender, EventArgs e)
-        {
-            cmdCerrar2.ForeColor = Color.Black;
-        }
-
-        private void cmdCerrar2_MouseLeave(object sender, EventArgs e)
-        {
-            cmdCerrar2.ForeColor = Color.Red;
-        }
-
         private void txtID_KeyPress(object sender, KeyPressEventArgs e)
         {
             if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -101,7 +82,7 @@ namespace IEFIManiás
 
         private void txtFecha_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '/')
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -109,28 +90,61 @@ namespace IEFIManiás
 
         private void cmdRegistrar_Click(object sender, EventArgs e)
         {
-            BD bd = new BD();
             string id = txtID.Text;
-            string fecha = txtFecha.Text;
+            string nombre = txtNombre.Text;
+            string fecha1 = txtFD.Text;
+            string fecha2 = txtFM.Text;
+            string fecha3 = txtFA.Text;
+            
             
 
-            if(!string.IsNullOrEmpty(id) && int.TryParse(id, out int idNum))
+            if(!string.IsNullOrEmpty(id) && int.TryParse(id, out int idNum) && 
+                !string.IsNullOrEmpty(fecha1) && int.TryParse(fecha1, out int fechaNum1) && 
+                !string.IsNullOrEmpty(fecha2) && int.TryParse(fecha2, out int fechaNum2) && 
+                !string.IsNullOrEmpty(fecha3) && int.TryParse(fecha3, out int fechaNum3))
             {
+                pc.pnombre = txtNombre.Text;
+                pc.pfecha1 = txtFD.Text;
+                pc.pfecha2 = txtFM.Text;
+                pc.pfecha3 = txtFA.Text;
+                pc.pid = txtID.Text;
 
 
-
-                bd.Nombre = txtNombre.Text;
-                bd.Fecha = txtFecha.Text;
-                bd.Id = idNum;
-                Console.WriteLine(bd.Id);
-
-                MessageBox.Show("Guardado Correctamente...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Datos guardados correctamente...", "",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Ingrese un ID válido...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese datos válidos...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void cmdCancelar_Click(object sender, EventArgs e)
+        {
+            FrmPrincipal prn = new FrmPrincipal();
+
+            prn.Show();
+            this.Hide();
+        }
+
+        private void txtFD_Click(object sender, EventArgs e)
+        {
+            txtFD.Text = string.Empty;
+        }
+
+        private void txtFM_Click(object sender, EventArgs e)
+        {
+            txtFM.Text = string.Empty;
+        }
+
+        private void txtFA_Click(object sender, EventArgs e)
+        {
+            txtFA.Text = string.Empty;
+        }
+
+        private void cmdConsultar_Click(object sender, EventArgs e)
+        {
+            pc.Show();
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,9 @@ using System.Windows.Forms;
 
 namespace IEFIManiás
 {
-    public partial class frmListados : Form
+    public partial class frmCargaVentas : Form
     {
-        FrmPrincipal principal = new FrmPrincipal();
-        public frmListados()
+        public frmCargaVentas()
         {
             InitializeComponent();
         }

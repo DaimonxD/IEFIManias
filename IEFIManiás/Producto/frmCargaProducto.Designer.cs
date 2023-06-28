@@ -30,11 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCargaProducto));
             this.lblTitulo2 = new System.Windows.Forms.Label();
-            this.cmdCerrar2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtFA = new System.Windows.Forms.TextBox();
+            this.txtFM = new System.Windows.Forms.TextBox();
+            this.txtFD = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txtFecha = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -43,8 +46,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.cmdCancelar = new System.Windows.Forms.Button();
-            this.cmdConsultar = new System.Windows.Forms.Button();
             this.cmdRegistrar = new System.Windows.Forms.Button();
+            this.cmdConsultar = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -63,28 +66,10 @@
             this.lblTitulo2.TabIndex = 1;
             this.lblTitulo2.Text = "Formulario Carga de Porducto";
             // 
-            // cmdCerrar2
-            // 
-            this.cmdCerrar2.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.cmdCerrar2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.cmdCerrar2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.cmdCerrar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdCerrar2.ForeColor = System.Drawing.Color.Red;
-            this.cmdCerrar2.Location = new System.Drawing.Point(364, 0);
-            this.cmdCerrar2.Name = "cmdCerrar2";
-            this.cmdCerrar2.Size = new System.Drawing.Size(34, 22);
-            this.cmdCerrar2.TabIndex = 0;
-            this.cmdCerrar2.Text = "X";
-            this.cmdCerrar2.UseVisualStyleBackColor = true;
-            this.cmdCerrar2.Click += new System.EventHandler(this.cmdCerrar2_Click);
-            this.cmdCerrar2.MouseEnter += new System.EventHandler(this.cmdCerrar2_MouseEnter);
-            this.cmdCerrar2.MouseLeave += new System.EventHandler(this.cmdCerrar2_MouseLeave);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(139)))), ((int)(((byte)(116)))));
             this.panel2.Controls.Add(this.lblTitulo2);
-            this.panel2.Controls.Add(this.cmdCerrar2);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(398, 22);
@@ -95,8 +80,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtFA);
+            this.groupBox1.Controls.Add(this.txtFM);
+            this.groupBox1.Controls.Add(this.txtFD);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.panel4);
-            this.groupBox1.Controls.Add(this.txtFecha);
             this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Controls.Add(this.pictureBox3);
             this.groupBox1.Controls.Add(this.txtNombre);
@@ -113,6 +102,63 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Productos";
             // 
+            // txtFA
+            // 
+            this.txtFA.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.txtFA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFA.Location = new System.Drawing.Point(224, 217);
+            this.txtFA.MaxLength = 4;
+            this.txtFA.Name = "txtFA";
+            this.txtFA.Size = new System.Drawing.Size(43, 19);
+            this.txtFA.TabIndex = 12;
+            this.txtFA.Text = "YYYY";
+            this.txtFA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtFA.Click += new System.EventHandler(this.txtFA_Click);
+            // 
+            // txtFM
+            // 
+            this.txtFM.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.txtFM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFM.Location = new System.Drawing.Point(143, 217);
+            this.txtFM.MaxLength = 2;
+            this.txtFM.Name = "txtFM";
+            this.txtFM.Size = new System.Drawing.Size(56, 19);
+            this.txtFM.TabIndex = 11;
+            this.txtFM.Text = "MM";
+            this.txtFM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtFM.Click += new System.EventHandler(this.txtFM_Click);
+            // 
+            // txtFD
+            // 
+            this.txtFD.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.txtFD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFD.Location = new System.Drawing.Point(69, 216);
+            this.txtFD.MaxLength = 2;
+            this.txtFD.Name = "txtFD";
+            this.txtFD.Size = new System.Drawing.Size(56, 19);
+            this.txtFD.TabIndex = 10;
+            this.txtFD.Text = "DD";
+            this.txtFD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtFD.Click += new System.EventHandler(this.txtFD_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(205, 216);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(13, 20);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "/";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(131, 216);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(13, 20);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "/";
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
@@ -120,20 +166,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 1);
             this.panel4.TabIndex = 7;
-            // 
-            // txtFecha
-            // 
-            this.txtFecha.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.txtFecha.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFecha.Location = new System.Drawing.Point(67, 222);
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(200, 19);
-            this.txtFecha.TabIndex = 5;
-            this.txtFecha.Text = "Fecha de Registro";
-            this.txtFecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtFecha.WordWrap = false;
-            this.txtFecha.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtFecha_MouseClick);
-            this.txtFecha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFecha_KeyPress);
             // 
             // panel3
             // 
@@ -222,16 +254,7 @@
             this.cmdCancelar.TabIndex = 3;
             this.cmdCancelar.Text = "&Cancelar";
             this.cmdCancelar.UseVisualStyleBackColor = false;
-            // 
-            // cmdConsultar
-            // 
-            this.cmdConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdConsultar.Location = new System.Drawing.Point(159, 394);
-            this.cmdConsultar.Name = "cmdConsultar";
-            this.cmdConsultar.Size = new System.Drawing.Size(75, 23);
-            this.cmdConsultar.TabIndex = 4;
-            this.cmdConsultar.Text = "&Consultar";
-            this.cmdConsultar.UseVisualStyleBackColor = true;
+            this.cmdCancelar.Click += new System.EventHandler(this.cmdCancelar_Click);
             // 
             // cmdRegistrar
             // 
@@ -245,6 +268,17 @@
             this.cmdRegistrar.Text = "&Registrar";
             this.cmdRegistrar.UseVisualStyleBackColor = true;
             this.cmdRegistrar.Click += new System.EventHandler(this.cmdRegistrar_Click);
+            // 
+            // cmdConsultar
+            // 
+            this.cmdConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdConsultar.Location = new System.Drawing.Point(159, 394);
+            this.cmdConsultar.Name = "cmdConsultar";
+            this.cmdConsultar.Size = new System.Drawing.Size(75, 23);
+            this.cmdConsultar.TabIndex = 4;
+            this.cmdConsultar.Text = "&Consultar";
+            this.cmdConsultar.UseVisualStyleBackColor = true;
+            this.cmdConsultar.Click += new System.EventHandler(this.cmdConsultar_Click);
             // 
             // frmCargaProducto
             // 
@@ -278,20 +312,23 @@
         #endregion
 
         private System.Windows.Forms.Label lblTitulo2;
-        private System.Windows.Forms.Button cmdCerrar2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txtFecha;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button cmdCancelar;
-        private System.Windows.Forms.Button cmdConsultar;
         private System.Windows.Forms.Button cmdRegistrar;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox txtFA;
+        private System.Windows.Forms.TextBox txtFM;
+        private System.Windows.Forms.TextBox txtFD;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button cmdConsultar;
     }
 }
