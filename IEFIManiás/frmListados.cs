@@ -12,10 +12,16 @@ namespace IEFIManiás
 {
     public partial class frmListados : Form
     {
-        FrmPrincipal principal = new FrmPrincipal();
         public frmListados()
         {
             InitializeComponent();
+        }
+
+        private void cmdCancelar_Click(object sender, EventArgs e)
+        {
+            FrmPrincipal prc = new FrmPrincipal();
+            prc.Show();
+            this.Hide();
         }
     }
 }
