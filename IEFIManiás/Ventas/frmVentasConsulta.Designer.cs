@@ -47,7 +47,7 @@
             this.lblTitulo2.AutoSize = true;
             this.lblTitulo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo2.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblTitulo2.Location = new System.Drawing.Point(341, 0);
+            this.lblTitulo2.Location = new System.Drawing.Point(323, 0);
             this.lblTitulo2.Name = "lblTitulo2";
             this.lblTitulo2.Size = new System.Drawing.Size(190, 16);
             this.lblTitulo2.TabIndex = 1;
@@ -61,11 +61,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(833, 22);
             this.panel2.TabIndex = 4;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // cmdRefrescar
             // 
             this.cmdRefrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdRefrescar.Location = new System.Drawing.Point(297, 374);
+            this.cmdRefrescar.Location = new System.Drawing.Point(301, 364);
             this.cmdRefrescar.Name = "cmdRefrescar";
             this.cmdRefrescar.Size = new System.Drawing.Size(111, 30);
             this.cmdRefrescar.TabIndex = 7;
@@ -75,12 +78,13 @@
             // cmdAceptar
             // 
             this.cmdAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdAceptar.Location = new System.Drawing.Point(441, 374);
+            this.cmdAceptar.Location = new System.Drawing.Point(456, 364);
             this.cmdAceptar.Name = "cmdAceptar";
             this.cmdAceptar.Size = new System.Drawing.Size(111, 30);
             this.cmdAceptar.TabIndex = 8;
             this.cmdAceptar.Text = "Aceptar";
             this.cmdAceptar.UseVisualStyleBackColor = true;
+            this.cmdAceptar.Click += new System.EventHandler(this.cmdAceptar_Click);
             // 
             // dataGridView1
             // 
@@ -94,10 +98,13 @@
             this.Cfecha2,
             this.Cfecha3});
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(139)))), ((int)(((byte)(116)))));
-            this.dataGridView1.Location = new System.Drawing.Point(12, 38);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(808, 330);
             this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDown);
+            this.dataGridView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseMove);
+            this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
             // 
             // Cid
             // 
@@ -149,6 +156,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmVentasConsulta";
             this.Text = "frmVentasConsulta";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmVentasConsulta_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmVentasConsulta_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.frmVentasConsulta_MouseUp);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IEFIManiás.Ventas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,20 @@ namespace IEFIManiás
         public frmCargaVentas()
         {
             InitializeComponent();
+        }
+
+        private void cmdConsultar2_Click(object sender, EventArgs e)
+        {
+            frmVentasConsulta consulta = new frmVentasConsulta();
+            consulta.Show();
+        }
+
+        private void cmdCancelar_Click(object sender, EventArgs e)
+        {
+            FrmPrincipal prn = new FrmPrincipal();
+
+            prn.Show();
+            this.Hide();
         }
     }
 }

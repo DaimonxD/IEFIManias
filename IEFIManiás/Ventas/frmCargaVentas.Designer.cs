@@ -292,6 +292,7 @@
             this.cmdConsultar2.TabIndex = 7;
             this.cmdConsultar2.Text = "&Consultar";
             this.cmdConsultar2.UseVisualStyleBackColor = true;
+            this.cmdConsultar2.Click += new System.EventHandler(this.cmdConsultar2_Click);
             // 
             // cmdCancelar
             // 
@@ -305,6 +306,7 @@
             this.cmdCancelar.TabIndex = 6;
             this.cmdCancelar.Text = "&Cancelar";
             this.cmdCancelar.UseVisualStyleBackColor = false;
+            this.cmdCancelar.Click += new System.EventHandler(this.cmdCancelar_Click);
             // 
             // frmCargaVentas
             // 
@@ -319,6 +321,7 @@
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCargaVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCargaVentas";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
