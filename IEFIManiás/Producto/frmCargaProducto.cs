@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,49 @@ namespace IEFIManiás
 {
     public partial class frmCargaProducto : Form
     {
+        private string nombre2, fecha4, id2, fecha5, fecha6, cantidad;
+
+
+        public string pnombre2
+        {
+            set
+            {
+                nombre2 = value;
+            }
+        }
+
+        public string pfecha4
+        {
+            set
+            {
+                fecha4 = value;
+            }
+        }
+
+        public string pid2
+        {
+            set
+            {
+                id2 = value;
+            }
+        }
+
+        public string pfecha5
+        {
+            set
+            {
+                fecha5 = value;
+            }
+        }
+
+        public string pfecha6
+        {
+            set
+            {
+                fecha6 = value;
+            }
+        }
+
         private bool mouse;
         private Point UltUbicacion;
 
@@ -101,8 +145,39 @@ namespace IEFIManiás
                 !string.IsNullOrEmpty(fecha3) && int.TryParse(fecha3, out int fechaNum3))
             {
 
+                pnombre2 = txtNombre.Text;
+                pfecha4 = txtFD.Text;
+                pfecha5 = txtFM.Text;
+                pfecha6 = txtFA.Text;
+                pid2 = txtID.Text;
 
-                MessageBox.Show("Datos guardados correctamente...", "",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                grabarDatos();
+                {
+                    bool datosExistentes2 = dataGridView1.Rows
+                    .Cast<DataGridViewRow>()
+                    .Any(row =>
+                    row.Cells["Cnombre"].Value?.ToString() == nombre &&
+                    row.Cells["Cid"].Value?.ToString() == id &&
+                    row.Cells["Cfecha1"].Value?.ToString() == fecha1 &&
+                     row.Cells["Cfecha2"].Value?.ToString() == fecha2 &&
+                    row.Cells["Cfecha3"].Value?.ToString() == fecha3);
+
+
+                    if (!datosExistentes2)
+                    {
+                        int renglon = dataGridView1.Rows.Add();
+                        dataGridView1.Rows[renglon].Cells["Cnombre"].Value = nombre;
+                        dataGridView1.Rows[renglon].Cells["Cid"].Value = id;
+                        dataGridView1.Rows[renglon].Cells["Cfecha1"].Value = fecha1;
+                        dataGridView1.Rows[renglon].Cells["Cfecha2"].Value = fecha2;
+                        dataGridView1.Rows[renglon].Cells["Cfecha3"].Value = fecha3;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Los datos ya existen en la lista.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+
             }
             else
             {
@@ -133,9 +208,69 @@ namespace IEFIManiás
         {
             txtFA.Text = string.Empty;
         }
-
-        private void cmdConsultar_Click(object sender, EventArgs e)
+        private void cmdBorrar_Click(object sender, EventArgs e)
         {
+            for (int f = 0; f < dataGridView1.Rows.Count; f++)
+            {
+                if (txtID.Text == dataGridView1.Rows[f].Cells[0].Value.ToString())
+                {
+                    dataGridView1.Rows.RemoveAt(f);
+                    borrarDatos();
+                    MessageBox.Show("Se ha eliminado este producto.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
+
+        private void frmCargaProducto_Load(object sender, EventArgs e)
+        {
+            if (!File.Exists("productos.txt"))
+            {
+                StreamWriter archivo = new StreamWriter("productos.txt");
+                archivo.Close();
+            }
+            else
+            {
+                StreamReader archivo = new StreamReader("productos.txt");
+                while (!archivo.EndOfStream)
+                {
+                    string id = archivo.ReadLine();
+                    string nombre = archivo.ReadLine();
+                    string cantidad = archivo.ReadLine();
+                    string fecha1 = archivo.ReadLine();
+                    string fecha2 = archivo.ReadLine();
+                    string fecha3 = archivo.ReadLine();
+                    dataGridView1.Rows.Add(id, nombre, cantidad, fecha1, fecha2, fecha3);
+                }
+                archivo.Close();
+            }
+        }
+
+        private void grabarDatos()
+        {
+            StreamWriter archivo = new StreamWriter("productos.txt", true);
+            archivo.WriteLine(txtID.Text);
+            archivo.WriteLine(txtNombre.Text);
+            archivo.WriteLine(txtFD.Text);
+            archivo.WriteLine(txtFM.Text);
+            archivo.WriteLine(txtFA.Text);
+            archivo.Close();
+        }
+
+        private void borrarDatos()
+        {
+            StreamWriter archivo = new StreamWriter("productos.txt");
+            for (int f = 0; f < dataGridView1.Rows.Count; f++)
+            {
+                archivo.WriteLine(dataGridView1.Rows[f].Cells[0].Value.ToString());
+                archivo.WriteLine(dataGridView1.Rows[f].Cells[1].Value.ToString());
+                archivo.WriteLine(dataGridView1.Rows[f].Cells[2].Value.ToString());
+                archivo.WriteLine(dataGridView1.Rows[f].Cells[3].Value.ToString());
+                archivo.WriteLine(dataGridView1.Rows[f].Cells[4].Value.ToString());
+            }
+            archivo.Close();
+        }
+
+
+
     }
 }

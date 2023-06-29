@@ -47,11 +47,19 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.cmdRegistrar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cmdBorrar = new System.Windows.Forms.Button();
+            this.Cid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cnombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cfecha1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cfecha2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cfecha3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo2
@@ -245,10 +253,10 @@
             // cmdCancelar
             // 
             this.cmdCancelar.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.cmdCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.cmdCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.cmdCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdCancelar.ForeColor = System.Drawing.Color.Red;
-            this.cmdCancelar.Location = new System.Drawing.Point(12, 394);
+            this.cmdCancelar.ForeColor = System.Drawing.Color.Black;
+            this.cmdCancelar.Location = new System.Drawing.Point(75, 396);
             this.cmdCancelar.Name = "cmdCancelar";
             this.cmdCancelar.Size = new System.Drawing.Size(75, 23);
             this.cmdCancelar.TabIndex = 3;
@@ -261,7 +269,7 @@
             this.cmdRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.LawnGreen;
             this.cmdRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdRegistrar.ForeColor = System.Drawing.Color.LawnGreen;
-            this.cmdRegistrar.Location = new System.Drawing.Point(311, 394);
+            this.cmdRegistrar.Location = new System.Drawing.Point(1067, 394);
             this.cmdRegistrar.Name = "cmdRegistrar";
             this.cmdRegistrar.Size = new System.Drawing.Size(75, 23);
             this.cmdRegistrar.TabIndex = 5;
@@ -269,12 +277,77 @@
             this.cmdRegistrar.UseVisualStyleBackColor = true;
             this.cmdRegistrar.Click += new System.EventHandler(this.cmdRegistrar_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(139)))), ((int)(((byte)(116)))));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Cid,
+            this.Cnombre,
+            this.Cfecha1,
+            this.Cfecha2,
+            this.Cfecha3});
+            this.dataGridView1.Location = new System.Drawing.Point(351, 44);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(808, 330);
+            this.dataGridView1.TabIndex = 6;
+            // 
+            // cmdBorrar
+            // 
+            this.cmdBorrar.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.cmdBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdBorrar.ForeColor = System.Drawing.Color.Red;
+            this.cmdBorrar.Location = new System.Drawing.Point(952, 394);
+            this.cmdBorrar.Name = "cmdBorrar";
+            this.cmdBorrar.Size = new System.Drawing.Size(75, 23);
+            this.cmdBorrar.TabIndex = 7;
+            this.cmdBorrar.Text = "&Borrar";
+            this.cmdBorrar.UseVisualStyleBackColor = true;
+            this.cmdBorrar.Click += new System.EventHandler(this.cmdBorrar_Click);
+            // 
+            // Cid
+            // 
+            this.Cid.HeaderText = "ID";
+            this.Cid.Name = "Cid";
+            this.Cid.ReadOnly = true;
+            this.Cid.Width = 250;
+            // 
+            // Cnombre
+            // 
+            this.Cnombre.HeaderText = "Nombre";
+            this.Cnombre.Name = "Cnombre";
+            this.Cnombre.ReadOnly = true;
+            this.Cnombre.Width = 215;
+            // 
+            // Cfecha1
+            // 
+            this.Cfecha1.HeaderText = "Dia";
+            this.Cfecha1.Name = "Cfecha1";
+            this.Cfecha1.ReadOnly = true;
+            // 
+            // Cfecha2
+            // 
+            this.Cfecha2.HeaderText = "Mes";
+            this.Cfecha2.Name = "Cfecha2";
+            this.Cfecha2.ReadOnly = true;
+            // 
+            // Cfecha3
+            // 
+            this.Cfecha3.HeaderText = "Año";
+            this.Cfecha3.Name = "Cfecha3";
+            this.Cfecha3.ReadOnly = true;
+            // 
             // frmCargaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(1170, 429);
+            this.Controls.Add(this.cmdBorrar);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cmdRegistrar);
             this.Controls.Add(this.cmdCancelar);
             this.Controls.Add(this.groupBox1);
@@ -283,6 +356,7 @@
             this.Name = "frmCargaProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmCargaProducto_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmCargaProducto_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmCargaProducto_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.frmCargaProducto_MouseUp);
@@ -293,6 +367,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -317,5 +392,12 @@
         private System.Windows.Forms.TextBox txtFD;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button cmdBorrar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cnombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cfecha1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cfecha2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cfecha3;
     }
 }
