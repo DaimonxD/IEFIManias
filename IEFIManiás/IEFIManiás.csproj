@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Producto\frmProductoConsulta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Producto\frmProductoConsulta.Designer.cs">
-      <DependentUpon>frmProductoConsulta.cs</DependentUpon>
-    </Compile>
     <Compile Include="Producto\frmCargaProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,15 +72,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ventas\frmVentasConsulta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ventas\frmVentasConsulta.Designer.cs">
-      <DependentUpon>frmVentasConsulta.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Producto\frmProductoConsulta.resx">
-      <DependentUpon>frmProductoConsulta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Producto\frmCargaProducto.resx">
       <DependentUpon>frmCargaProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,9 +92,6 @@
     </Compile>
     <EmbeddedResource Include="Ventas\frmCargaVentas.resx">
       <DependentUpon>frmCargaVentas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ventas\frmVentasConsulta.resx">
-      <DependentUpon>frmVentasConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

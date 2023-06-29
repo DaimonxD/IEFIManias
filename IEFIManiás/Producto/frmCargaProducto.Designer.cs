@@ -47,7 +47,6 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.cmdRegistrar = new System.Windows.Forms.Button();
-            this.cmdConsultar = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -60,7 +59,7 @@
             this.lblTitulo2.AutoSize = true;
             this.lblTitulo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo2.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblTitulo2.Location = new System.Drawing.Point(117, 3);
+            this.lblTitulo2.Location = new System.Drawing.Point(85, 0);
             this.lblTitulo2.Name = "lblTitulo2";
             this.lblTitulo2.Size = new System.Drawing.Size(187, 16);
             this.lblTitulo2.TabIndex = 1;
@@ -72,7 +71,7 @@
             this.panel2.Controls.Add(this.lblTitulo2);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(398, 22);
+            this.panel2.Size = new System.Drawing.Size(1179, 22);
             this.panel2.TabIndex = 1;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
@@ -95,7 +94,7 @@
             this.groupBox1.Controls.Add(this.txtID);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(51, 40);
+            this.groupBox1.Location = new System.Drawing.Point(25, 28);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(293, 304);
             this.groupBox1.TabIndex = 2;
@@ -233,6 +232,7 @@
             this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtID.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtID.Location = new System.Drawing.Point(67, 55);
+            this.txtID.MaxLength = 10;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(200, 19);
             this.txtID.TabIndex = 0;
@@ -269,25 +269,13 @@
             this.cmdRegistrar.UseVisualStyleBackColor = true;
             this.cmdRegistrar.Click += new System.EventHandler(this.cmdRegistrar_Click);
             // 
-            // cmdConsultar
-            // 
-            this.cmdConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdConsultar.Location = new System.Drawing.Point(159, 394);
-            this.cmdConsultar.Name = "cmdConsultar";
-            this.cmdConsultar.Size = new System.Drawing.Size(75, 23);
-            this.cmdConsultar.TabIndex = 4;
-            this.cmdConsultar.Text = "&Consultar";
-            this.cmdConsultar.UseVisualStyleBackColor = true;
-            this.cmdConsultar.Click += new System.EventHandler(this.cmdConsultar_Click);
-            // 
             // frmCargaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(398, 429);
+            this.ClientSize = new System.Drawing.Size(1170, 429);
             this.Controls.Add(this.cmdRegistrar);
-            this.Controls.Add(this.cmdConsultar);
             this.Controls.Add(this.cmdCancelar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
@@ -329,6 +317,5 @@
         private System.Windows.Forms.TextBox txtFD;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button cmdConsultar;
     }
 }

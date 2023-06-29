@@ -1,5 +1,4 @@
-﻿using IEFIManiás.Producto;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,8 +14,6 @@ namespace IEFIManiás
 {
     public partial class frmCargaProducto : Form
     {
-
-        frmProductoConsulta pc = new frmProductoConsulta();
         private bool mouse;
         private Point UltUbicacion;
 
@@ -103,11 +100,6 @@ namespace IEFIManiás
                 !string.IsNullOrEmpty(fecha2) && int.TryParse(fecha2, out int fechaNum2) && 
                 !string.IsNullOrEmpty(fecha3) && int.TryParse(fecha3, out int fechaNum3))
             {
-                pc.pnombre = txtNombre.Text;
-                pc.pfecha1 = txtFD.Text;
-                pc.pfecha2 = txtFM.Text;
-                pc.pfecha3 = txtFA.Text;
-                pc.pid = txtID.Text;
 
 
                 MessageBox.Show("Datos guardados correctamente...", "",MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -144,7 +136,6 @@ namespace IEFIManiás
 
         private void cmdConsultar_Click(object sender, EventArgs e)
         {
-            pc.Show();
         }
     }
 }
