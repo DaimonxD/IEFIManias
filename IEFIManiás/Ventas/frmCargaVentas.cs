@@ -343,6 +343,5 @@ namespace IEFIManiás
             }
             archivo.Close ();
         }
-
     }
 }

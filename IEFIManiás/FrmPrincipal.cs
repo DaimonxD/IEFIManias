@@ -18,7 +18,7 @@ namespace IEFIManiás
         private Point UltUbicacion;
         frmCargaProducto CP = new frmCargaProducto();
         frmCargaVentas CV = new frmCargaVentas();
-        frmListados Lt = new frmListados();
+        frmListadosOG Lt = new frmListadosOG();
         public string[,] Formulario = { { "Carga de Producto", "Carga de Ventas", "Formulario de Listados" } };
         public FrmPrincipal()
         {

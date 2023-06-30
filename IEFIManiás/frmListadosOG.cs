@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,8 @@ namespace IEFIManiás
 {
     public partial class frmListadosOG : Form
     {
+        public string[,] contenidos = { { "Productos", "Ventas" } };
+
         public frmListadosOG()
         {
             InitializeComponent();
@@ -28,26 +31,29 @@ namespace IEFIManiás
 
         private void button1_Click(object sender, EventArgs e)
         {
-        
-          if (!File.Exists("ventas.txt"))
-          {
-               StreamWriter archivo = new StreamWriter("ventas.txt");
-               archivo.Close();
-          }
-            else
+            string producto = cboxContenido.SelectedItem?.ToString();
+
+            if(!string.IsNullOrEmpty(producto))
             {
-                StreamReader archivo = new StreamReader("ventas.txt");
-                while (!archivo.EndOfStream)
+                switch (producto)
                 {
-                    string id = archivo.ReadLine();
-                    string nombre = archivo.ReadLine();
-                    string cantidad = archivo.ReadLine();
-                    string fecha1 = archivo.ReadLine();
-                    string fecha2 = archivo.ReadLine();
-                    string fecha3 = archivo.ReadLine();
-                    dataGridView2.Rows.Add(id, nombre, cantidad, fecha1, fecha2, fecha3);
+                    case var _ when producto == contenidos[0, 0]:
+
+
+
+
+                        break;
+                    case var _ when producto == contenidos[0, 1]:
+
+
+
+
+
+                        break;
+                    default:
+                        MessageBox.Show("Seleccione el Contenido que quiere ver...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
                 }
-                archivo.Close();
             }
         }
     }
