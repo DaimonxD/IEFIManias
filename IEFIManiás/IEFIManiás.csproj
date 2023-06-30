@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmListadosOG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListadosOG.Designer.cs">
+      <DependentUpon>frmListadosOG.cs</DependentUpon>
+    </Compile>
     <Compile Include="Producto\frmCargaProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmListadosOG.resx">
+      <DependentUpon>frmListadosOG.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Producto\frmCargaProducto.resx">
       <DependentUpon>frmCargaProducto.cs</DependentUpon>
     </EmbeddedResource>

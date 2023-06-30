@@ -15,7 +15,7 @@ namespace IEFIManiás
 {
     public partial class frmCargaProducto : Form
     {
-        private string nombre2, fecha4, id2, fecha5, fecha6, cantidad;
+        private string nombre2, fecha4, id2, fecha5, fecha6;
 
 
         public string pnombre2
@@ -269,8 +269,5 @@ namespace IEFIManiás
             }
             archivo.Close();
         }
-
-
-
     }
 }

@@ -52,13 +52,19 @@
             this.cmdRegistrar2 = new System.Windows.Forms.Button();
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.cmdBorrar = new System.Windows.Forms.Button();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.cmdFiltro = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.cmdFiltrar2 = new System.Windows.Forms.Button();
+            this.txtFiltroNombre = new System.Windows.Forms.TextBox();
             this.Cid2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ccantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cnombre2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cfecha4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cfecha5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cfecha6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmdBorrar = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -97,7 +103,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(659, 0);
+            this.label3.Location = new System.Drawing.Point(668, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(190, 16);
             this.label3.TabIndex = 9;
@@ -156,7 +162,7 @@
             // 
             this.txtFA2.BackColor = System.Drawing.Color.MediumAquamarine;
             this.txtFA2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFA2.Location = new System.Drawing.Point(224, 217);
+            this.txtFA2.Location = new System.Drawing.Point(222, 220);
             this.txtFA2.MaxLength = 4;
             this.txtFA2.Name = "txtFA2";
             this.txtFA2.Size = new System.Drawing.Size(43, 19);
@@ -179,7 +185,7 @@
             // 
             this.txtFM2.BackColor = System.Drawing.Color.MediumAquamarine;
             this.txtFM2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFM2.Location = new System.Drawing.Point(143, 217);
+            this.txtFM2.Location = new System.Drawing.Point(141, 220);
             this.txtFM2.MaxLength = 2;
             this.txtFM2.Name = "txtFM2";
             this.txtFM2.Size = new System.Drawing.Size(56, 19);
@@ -192,7 +198,7 @@
             // 
             this.txtFD2.BackColor = System.Drawing.Color.MediumAquamarine;
             this.txtFD2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFD2.Location = new System.Drawing.Point(69, 216);
+            this.txtFD2.Location = new System.Drawing.Point(67, 219);
             this.txtFD2.MaxLength = 2;
             this.txtFD2.Name = "txtFD2";
             this.txtFD2.Size = new System.Drawing.Size(56, 19);
@@ -204,7 +210,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(205, 216);
+            this.label2.Location = new System.Drawing.Point(203, 219);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(13, 20);
             this.label2.TabIndex = 9;
@@ -213,7 +219,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(131, 216);
+            this.label1.Location = new System.Drawing.Point(129, 219);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(13, 20);
             this.label1.TabIndex = 8;
@@ -254,10 +260,11 @@
             this.txtNombre2.Name = "txtNombre2";
             this.txtNombre2.Size = new System.Drawing.Size(200, 19);
             this.txtNombre2.TabIndex = 3;
-            this.txtNombre2.Text = "Nombre";
+            this.txtNombre2.Text = "Producto";
             this.txtNombre2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNombre2.WordWrap = false;
             this.txtNombre2.Click += new System.EventHandler(this.txtNombre_Click);
+            this.txtNombre2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre2_KeyPress);
             // 
             // pictureBox2
             // 
@@ -348,6 +355,83 @@
             this.dataGridView2.Size = new System.Drawing.Size(808, 330);
             this.dataGridView2.TabIndex = 10;
             // 
+            // cmdBorrar
+            // 
+            this.cmdBorrar.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.cmdBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdBorrar.ForeColor = System.Drawing.Color.Red;
+            this.cmdBorrar.Location = new System.Drawing.Point(952, 394);
+            this.cmdBorrar.Name = "cmdBorrar";
+            this.cmdBorrar.Size = new System.Drawing.Size(75, 23);
+            this.cmdBorrar.TabIndex = 11;
+            this.cmdBorrar.Text = "&Borrar";
+            this.cmdBorrar.UseVisualStyleBackColor = true;
+            this.cmdBorrar.Click += new System.EventHandler(this.cmdBorrar_Click);
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltro.Location = new System.Drawing.Point(351, 395);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(100, 19);
+            this.txtFiltro.TabIndex = 12;
+            this.txtFiltro.Text = "Cantidad";
+            this.txtFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtFiltro.Click += new System.EventHandler(this.txtFiltro_Click);
+            // 
+            // cmdFiltro
+            // 
+            this.cmdFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdFiltro.Location = new System.Drawing.Point(458, 394);
+            this.cmdFiltro.Name = "cmdFiltro";
+            this.cmdFiltro.Size = new System.Drawing.Size(80, 23);
+            this.cmdFiltro.TabIndex = 13;
+            this.cmdFiltro.Text = "Filtrar";
+            this.cmdFiltro.UseVisualStyleBackColor = true;
+            this.cmdFiltro.Click += new System.EventHandler(this.cmdFiltro_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Black;
+            this.panel6.Location = new System.Drawing.Point(351, 416);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(100, 1);
+            this.panel6.TabIndex = 5;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Black;
+            this.panel7.Location = new System.Drawing.Point(565, 416);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(100, 1);
+            this.panel7.TabIndex = 14;
+            // 
+            // cmdFiltrar2
+            // 
+            this.cmdFiltrar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdFiltrar2.Location = new System.Drawing.Point(672, 394);
+            this.cmdFiltrar2.Name = "cmdFiltrar2";
+            this.cmdFiltrar2.Size = new System.Drawing.Size(80, 23);
+            this.cmdFiltrar2.TabIndex = 16;
+            this.cmdFiltrar2.Text = "Filtrar";
+            this.cmdFiltrar2.UseVisualStyleBackColor = true;
+            this.cmdFiltrar2.Click += new System.EventHandler(this.cmdFiltrar2_Click);
+            // 
+            // txtFiltroNombre
+            // 
+            this.txtFiltroNombre.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.txtFiltroNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFiltroNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltroNombre.Location = new System.Drawing.Point(565, 395);
+            this.txtFiltroNombre.Name = "txtFiltroNombre";
+            this.txtFiltroNombre.Size = new System.Drawing.Size(100, 19);
+            this.txtFiltroNombre.TabIndex = 15;
+            this.txtFiltroNombre.Text = "Producto";
+            this.txtFiltroNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtFiltroNombre.Click += new System.EventHandler(this.txtFiltroNombre_Click);
+            // 
             // Cid2
             // 
             this.Cid2.HeaderText = "ID";
@@ -363,7 +447,7 @@
             // 
             // Cnombre2
             // 
-            this.Cnombre2.HeaderText = "Nombre";
+            this.Cnombre2.HeaderText = "Producto";
             this.Cnombre2.Name = "Cnombre2";
             this.Cnombre2.ReadOnly = true;
             this.Cnombre2.Width = 200;
@@ -386,25 +470,18 @@
             this.Cfecha6.Name = "Cfecha6";
             this.Cfecha6.ReadOnly = true;
             // 
-            // cmdBorrar
-            // 
-            this.cmdBorrar.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.cmdBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdBorrar.ForeColor = System.Drawing.Color.Red;
-            this.cmdBorrar.Location = new System.Drawing.Point(952, 394);
-            this.cmdBorrar.Name = "cmdBorrar";
-            this.cmdBorrar.Size = new System.Drawing.Size(75, 23);
-            this.cmdBorrar.TabIndex = 11;
-            this.cmdBorrar.Text = "&Borrar";
-            this.cmdBorrar.UseVisualStyleBackColor = true;
-            this.cmdBorrar.Click += new System.EventHandler(this.cmdBorrar_Click);
-            // 
             // frmCargaVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(1170, 429);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.cmdFiltrar2);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.txtFiltroNombre);
+            this.Controls.Add(this.cmdFiltro);
+            this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.cmdBorrar);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.cmdRegistrar2);
@@ -429,6 +506,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -457,12 +535,18 @@
         private System.Windows.Forms.Button cmdCancelar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button cmdBorrar;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.Button cmdFiltro;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button cmdFiltrar2;
+        private System.Windows.Forms.TextBox txtFiltroNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cid2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ccantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cnombre2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cfecha4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cfecha5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cfecha6;
-        private System.Windows.Forms.Button cmdBorrar;
     }
 }

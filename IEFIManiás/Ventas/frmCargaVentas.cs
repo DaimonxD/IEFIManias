@@ -14,6 +14,7 @@ namespace IEFIManiás
 {
     public partial class frmCargaVentas : Form
     {
+
         private string nombre2, fecha4, id2, fecha5, fecha6, cantidad;
 
 
@@ -72,11 +73,6 @@ namespace IEFIManiás
         public frmCargaVentas()
         {
             InitializeComponent();
-        }
-
-        private void cmdConsultar2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void cmdCancelar_Click(object sender, EventArgs e)
@@ -178,6 +174,74 @@ namespace IEFIManiás
         {
             mouse = true;
             UltUbicacion = e.Location;
+        }
+
+        private void cmdFiltro_Click(object sender, EventArgs e)
+        {
+            string filtro = txtFiltro.Text.Trim();
+
+            dataGridView2.Rows.Clear();
+
+            using (StreamReader archivo = new StreamReader("ventas.txt"))
+            {
+                while (!archivo.EndOfStream)
+                {
+                    string id = archivo.ReadLine();
+                    string nombre = archivo.ReadLine();
+                    string cantidad = archivo.ReadLine();
+                    string fecha1 = archivo.ReadLine();
+                    string fecha2 = archivo.ReadLine();
+                    string fecha3 = archivo.ReadLine();
+
+                    if (string.IsNullOrEmpty(filtro) || cantidad == filtro)
+                    {
+                        dataGridView2.Rows.Add(id, cantidad, nombre, fecha1, fecha2, fecha3);
+                    }
+                }
+            }
+        }
+
+        private void txtFiltro_Click(object sender, EventArgs e)
+        {
+            txtFiltro.Text = string.Empty;
+        }
+
+        private void txtNombre2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtFiltroNombre_Click(object sender, EventArgs e)
+        {
+            txtFiltroNombre.Text = string.Empty;
+        }
+
+        private void cmdFiltrar2_Click(object sender, EventArgs e)
+        {
+            string filtro2 = txtFiltroNombre.Text.Trim();
+
+            dataGridView2.Rows.Clear();
+
+            using (StreamReader archivo = new StreamReader("ventas.txt"))
+            {
+                while (!archivo.EndOfStream)
+                {
+                    string id = archivo.ReadLine();
+                    string nombre = archivo.ReadLine();
+                    string cantidad = archivo.ReadLine();
+                    string fecha1 = archivo.ReadLine();
+                    string fecha2 = archivo.ReadLine();
+                    string fecha3 = archivo.ReadLine();
+
+                    if (string.IsNullOrEmpty(filtro2) || nombre == filtro2)
+                    {
+                        dataGridView2.Rows.Add(id, cantidad, nombre, fecha1, fecha2, fecha3);
+                    }
+                }
+            }
         }
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)
